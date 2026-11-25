@@ -71,3 +71,9 @@ Next: user fills `.env` / `CardKholo/.env.local`, deploys, then runs the live ch
   e2e API run PASS (real card 4 functions in 5 s, ICS, APK + audio, bit.ly, events, status, pairing).
   Flagsmith env webhook created (id 5481) -> /hooks/flagsmith.
 - Left: simulate_incident + NudgeBee approval (needs user OK), two-phone Telegram test, cron-job.org keep-warm.
+- NudgeBee loop: approval OK but DELETE 404'd. Cause: NudgeBee (Go) renders 7-digit JSON numbers as
+  1.203642e+06 in URLs. Fix: incident payload sends flagsmith_feature_id/segment_id as strings (pushed).
+- render.yaml autoDeploy: false (a redeploy wipes SQLite on free plan). Deploy manually from Render.
+- Final prod check (after submission): integrations 12/12 PASS; API e2e all PASS; hooks reject bad secrets (403);
+  all frontend routes 200; host voice invite live (Saaras -> 105B Hindi invite -> /i/{token} -> scans OK, verified Agarwal);
+  canary restored (default OFF, canary_20 ON). Untested only: Telegram pairing/alert on real phones.
