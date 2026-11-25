@@ -72,8 +72,8 @@ class IncidentTests(unittest.TestCase):
         req, = self.requests
         self.assertEqual(json.loads(req.content), {
             "type": "false_alarm_spike", "pack": PACK, "false_alarms": 3, "window_minutes": 5,
-            "flagsmith_feature_id": 123, "incident_id": incident["id"],
-            "flagsmith_segment_id": 987, "rollout": "canary_20",
+            "flagsmith_feature_id": "123", "incident_id": incident["id"],
+            "flagsmith_segment_id": "987", "rollout": "canary_20",
             "app_callback": "https://cards.example/hooks/rolled-back",
             "summary": f"Pack {PACK} flagged 3 real invites as scams in 5 minutes",
         })

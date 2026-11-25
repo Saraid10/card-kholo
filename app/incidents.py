@@ -66,8 +66,9 @@ def _notify_workflow(job) -> bool:
         return False
     payload = {
         "type": "false_alarm_spike", "pack": pack, "false_alarms": count, "window_minutes": 5,
-        "flagsmith_feature_id": feature_id, "incident_id": job["incident_id"],
-        "flagsmith_segment_id": segment_id, "rollout": "canary_20",
+        # IDs as strings: NudgeBee (Go) renders 7-digit JSON numbers as 1.203642e+06 inside URLs.
+        "flagsmith_feature_id": str(feature_id), "incident_id": job["incident_id"],
+        "flagsmith_segment_id": str(segment_id), "rollout": "canary_20",
         "app_callback": f"{config.APP_BASE_URL}/hooks/rolled-back",
         "summary": f"Pack {pack} flagged {count} real invites as scams in 5 minutes",
     }

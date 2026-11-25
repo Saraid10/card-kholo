@@ -247,8 +247,8 @@ def nudgebee(base_url: str):
         segments = json.loads(env("FLAGSMITH_SEGMENT_IDS") or "{}")
         body = {
             "type": "false_alarm_spike", "pack": "pack_broad_test", "false_alarms": 3, "window_minutes": 5,
-            "flagsmith_feature_id": features.get("pack_broad_test"),
-            "flagsmith_segment_id": segments.get("canary_20"), "rollout": "canary_20",
+            "flagsmith_feature_id": str(features.get("pack_broad_test")),
+            "flagsmith_segment_id": str(segments.get("canary_20")), "rollout": "canary_20",
             "incident_id": "check-test", "app_callback": f"{base_url}/hooks/rolled-back",
             "summary": "Integration check, please reject",
         }
