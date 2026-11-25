@@ -16,3 +16,5 @@ dist/
 *.db
 demo/*.apk
 deploy/*.env
+demo/video/build/
+demo/video/CardKholo_demo_extended.*

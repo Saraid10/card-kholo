@@ -1,0 +1,175 @@
+1
+00:00:00,000 --> 00:00:00,779
+Card Kholo.
+
+2
+00:00:00,779 --> 00:00:04,109
+The safe way to open, and send, a wedding card.
+
+3
+00:00:04,109 --> 00:00:09,026
+Scammers send fake wedding cards as Android apps that steal bank OTPs from parents.
+
+4
+00:00:09,026 --> 00:00:11,989
+Card Kholo checks every invite before anyone taps.
+
+5
+00:00:11,989 --> 00:00:14,891
+Rules and Flagsmith decide the verdict, never AI.
+
+6
+00:00:14,891 --> 00:00:18,924
+A parent picks a language, Hindi, Kannada or English, and a role.
+
+7
+00:00:18,924 --> 00:00:22,787
+Their son or daughter scans this QR code to link on Telegram.
+
+8
+00:00:22,787 --> 00:00:26,919
+When a card arrives, the parent uploads it as is, or pastes the message.
+
+9
+00:00:26,919 --> 00:00:28,239
+Files are never stored.
+
+10
+00:00:28,239 --> 00:00:29,347
+A real card is safe.
+
+11
+00:00:29,347 --> 00:00:32,837
+Sarvam Document AI and a vision model read every function, with
+
+12
+00:00:32,837 --> 00:00:34,000
+date, time and venue.
+
+13
+00:00:34,000 --> 00:00:37,361
+One tap adds the whole wedding to the calendar, with reminders and
+
+14
+00:00:37,361 --> 00:00:38,175
+a leave by time.
+
+15
+00:00:38,175 --> 00:00:42,905
+Directions open in Google Maps, by car, bike or metro, with a WhatsApp share.
+
+16
+00:00:42,905 --> 00:00:47,586
+A fake card, Shaadi_Card_Priya.pdf.apk, is caught by its Android files.
+
+17
+00:00:47,586 --> 00:00:51,541
+A full screen stop plays a warning in the parent's language,
+
+18
+00:00:51,541 --> 00:00:53,123
+voiced by Sarvam Bulbul.
+
+19
+00:00:53,123 --> 00:00:55,525
+And the son or daughter gets a Telegram alert instantly.
+
+20
+00:00:55,525 --> 00:00:58,687
+Every warning is shown and spoken in Hindi, Kannada or English.
+
+21
+00:00:58,687 --> 00:00:59,683
+Already opened it?
+
+22
+00:00:59,683 --> 00:01:00,623
+First hour steps:
+
+23
+00:01:00,623 --> 00:01:02,892
+call 1930, airplane mode, block the bank.
+
+24
+00:01:02,892 --> 00:01:04,577
+Pasted links are checked too:
+
+25
+00:01:04,577 --> 00:01:07,250
+shorteners, plain HTTP and look alike domains.
+
+26
+00:01:07,250 --> 00:01:10,039
+For parents, strict mode turns them into a stop.
+
+27
+00:01:10,039 --> 00:01:11,796
+Hosts just speak an invite.
+
+28
+00:01:11,796 --> 00:01:17,263
+Sarvam Saaras transcribes it, Sarvam 105B writes it, and guests get a verified link.
+
+29
+00:01:17,263 --> 00:01:18,532
+Sarvam powers it all:
+
+30
+00:01:18,532 --> 00:01:23,909
+Document AI reads cards, Bulbul speaks warnings, Saaras and the 105B model write invites.
+
+31
+00:01:23,909 --> 00:01:25,480
+Even this voice is Bulbul.
+
+32
+00:01:25,480 --> 00:01:26,823
+Flagsmith runs the rules.
+
+33
+00:01:26,823 --> 00:01:29,027
+Each scam pack is a flag with JSON rules.
+
+34
+00:01:29,027 --> 00:01:30,316
+Parents get strict mode.
+
+35
+00:01:30,316 --> 00:01:32,896
+Risky packs reach a twenty percent canary first.
+
+36
+00:01:32,896 --> 00:01:35,475
+A new scam domain blocks every phone in seconds.
+
+37
+00:01:35,475 --> 00:01:38,108
+And a multivariate flag tests the warning itself.
+
+38
+00:01:38,108 --> 00:01:42,493
+If a pack flags real invites, three false alarms open an incident in NudgeBee.
+
+39
+00:01:42,493 --> 00:01:46,035
+A human approves, and NudgeBee removes the canary and turns the
+
+40
+00:01:46,035 --> 00:01:47,272
+pack off in Flagsmith.
+
+41
+00:01:47,272 --> 00:01:49,125
+Our live control room shows it:
+
+42
+00:01:49,125 --> 00:01:52,235
+incident closed, changes labelled NudgeBee rollback.
+
+43
+00:01:52,235 --> 00:01:52,858
+Card Kholo.
+
+44
+00:01:52,858 --> 00:01:54,560
+Check the card before you tap.
