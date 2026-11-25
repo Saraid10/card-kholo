@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "couple": {"type": "string", "description": "Names of the bride and groom as printed on the card"},
+    "host_family": {"type": "string", "description": "The family or person sending the invitation"},
+    "functions": {
+      "type": "array",
+      "description": "Every event on the card such as mehendi, haldi, sangeet, tilak, baraat, phere, wedding, reception",
+      "items": {
+        "type": "object",
+        "description": "One event on the card",
+        "properties": {
+          "name": {"type": "string", "description": "Event name in English, e.g. Sangeet"},
+          "name_original": {"type": "string", "description": "Event name exactly as written on the card"},
+          "date": {"type": "string", "description": "Event date as YYYY-MM-DD"},
+          "time": {"type": "string", "description": "Start time as 24 hour HH:MM, empty if not printed"},
+          "venue_name": {"type": "string", "description": "Name of the venue"},
+          "venue_address": {"type": "string", "description": "Street address of the venue"},
+          "city": {"type": "string", "description": "City of the venue"}
+        }
+      }
+    },
+    "rsvp_contact": {"type": "string", "description": "RSVP names or phone numbers printed on the card"}
+  }
+}

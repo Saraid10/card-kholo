@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+/* ---------- Design tokens (see DESIGN.md) ---------- */
+@theme {
+  --color-paper: #f7f1e7;
+  --color-paper-2: #efe6d6;
+  --color-card: #fffcf6;
+  --color-ink: #22181a;
+  --color-ink-2: #5e5052;
+  --color-ink-3: #8a7b7c;
+  --color-line: #e2d5c3;
+  --color-maroon: #5b2a33;
+  --color-maroon-2: #47222a;
+  --color-wine: #7a4049;
+  --color-gold: #b39a6b;
+  --color-gold-2: #d8c6a0;
+  --color-marigold: #d4bc93;
+  --color-blush: #e6d6cc;
+  --color-safe: #55705d;
+  --color-safe-soft: #e2e8df;
+  --color-check: #8c6c45;
+  --color-check-soft: #efe5d3;
+  --color-stop: #8f4038;
+  --color-stop-2: #6f322c;
+  --color-stop-soft: #efdfda;
+  --color-night: #170f10;
+  --color-night-2: #22171a;
+  --color-night-3: #34262a;
+
+  --font-display: 'Fraunces', 'Tiro Devanagari Hindi', 'Tiro Kannada', Georgia, serif;
+  --font-sans: 'Mukta', 'Noto Sans Kannada', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius-card: 22px;
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.7) inset, 0 1px 2px rgb(60 30 20 / 0.06), 0 8px 24px -12px rgb(60 30 20 / 0.18);
+  --shadow-lift: 0 24px 60px -24px rgb(60 20 20 / 0.35);
+
+  --animate-rise: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-stamp: stamp 0.45s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+  --animate-pulse-ring: pulse-ring 1.8s ease-out infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes stamp {
+    0% { opacity: 0; transform: scale(1.8) rotate(-14deg); }
+    100% { opacity: 1; transform: scale(1) rotate(-6deg); }
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgb(143 64 56 / 0.35); }
+    100% { box-shadow: 0 0 0 26px rgb(143 64 56 / 0); }
+  }
+}
+
+/* Hindi and Kannada get their own families so the browser never fakes the glyphs */
+:lang(kn) { --font-sans: 'Noto Sans Kannada', 'Mukta', system-ui, sans-serif; --font-display: 'Tiro Kannada', 'Fraunces', serif; }
+:lang(hi) { --font-display: 'Tiro Devanagari Hindi', 'Fraunces', serif; }
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body { min-height: 100dvh; background: var(--color-paper); }
+  button, input, textarea, select { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--color-gold); outline-offset: 2px; border-radius: 6px; }
+  ::selection { background: var(--color-blush); }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.015em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+}
+
+@layer components {
+  /* Paper grain: two soft radial washes, no image request */
+  .paper-bg {
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .22 0 0 0 0 .15 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      radial-gradient(1200px 600px at 100% -10%, rgb(230 214 204 / 0.4), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgb(212 188 147 / 0.1), transparent 60%),
+      var(--color-paper);
+  }
+  .maroon-bg {
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      radial-gradient(900px 500px at 85% 0%, rgb(122 64 73 / 0.55), transparent 70%),
+      radial-gradient(700px 500px at 0% 100%, rgb(179 154 107 / 0.12), transparent 60%),
+      var(--color-maroon);
+  }
+  .stop-bg {
+    background:
+      radial-gradient(900px 500px at 85% 0%, rgb(143 64 56 / 0.35), transparent 70%),
+      radial-gradient(700px 500px at 0% 100%, rgb(0 0 0 / 0.25), transparent 60%),
+      #3f221f;
+  }
+  .display-xl { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 7vw, 5.4rem); line-height: 0.98; letter-spacing: -0.03em; font-variation-settings: 'opsz' 144; }
+  .display-lg { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.025em; font-variation-settings: 'opsz' 120; }
+  .display-md { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.9rem, 4.2vw, 2.4rem); line-height: 1.05; letter-spacing: -0.02em; font-variation-settings: 'opsz' 96; }
+  .accent { font-style: italic; color: var(--color-wine); font-weight: 400; }
+  .accent-gold { font-style: italic; color: var(--color-gold-2); font-weight: 400; }
+  .eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+
+  /* Double gold rule, like the border of a printed card */
+  .rule-double { height: 5px; border-top: 1px solid var(--color-gold); border-bottom: 1px solid var(--color-gold); opacity: 0.7; }
+
+  .card { background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+  .card-sunk { background: var(--color-paper-2); border-radius: var(--radius-card); }
+
+  .field {
+    width: 100%; background: var(--color-card); border: 1.5px solid var(--color-line); border-radius: 16px;
+    padding: 14px 16px; font-size: 17px; transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .field:focus { outline: none; border-color: var(--color-wine); box-shadow: 0 0 0 4px rgb(122 64 73 / 0.12); }
+  .field::placeholder { color: var(--color-ink-3); }
+
+  .lift { transition: transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .2s; }
+  .lift:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+
+  /* Staggered entrance for lists */
+  .stagger > * { animation: var(--animate-rise); }
+  .stagger > *:nth-child(2) { animation-delay: .05s; }
+  .stagger > *:nth-child(3) { animation-delay: .1s; }
+  .stagger > *:nth-child(4) { animation-delay: .15s; }
+  .stagger > *:nth-child(5) { animation-delay: .2s; }
+  .stagger > *:nth-child(n+6) { animation-delay: .25s; }
+
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  .safe-bottom { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

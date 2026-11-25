@@ -1,0 +1,29 @@
+{
+  "815ab6ec76c8c849951c66f02e5afc1c376553e1a052bfe1e60bd49a5f877bce": {
+    "couple": "Priya and Arjun",
+    "functions": [
+      {
+        "name": "Sangeet",
+        "name_original": "Sangeet",
+        "date": "2026-12-12",
+        "time": "18:00",
+        "venue_name": "Rose Garden",
+        "venue_address": "Amer Road",
+        "city": "Jaipur",
+        "gcal_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sangeet+-+Priya+and+Arjun&dates=20261212T180000%2F20261212T210000&ctz=Asia%2FKolkata&location=Rose+Garden%2C+Amer+Road%2C+Jaipur&details=Added+with+Card+Kholo",
+        "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Rose+Garden%2C+Amer+Road%2C+Jaipur"
+      },
+      {
+        "name": "Wedding",
+        "name_original": "Wedding",
+        "date": "2026-12-13",
+        "time": "",
+        "venue_name": "Courtyard Hall",
+        "venue_address": "Palace Road",
+        "city": "Jaipur",
+        "gcal_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+-+Priya+and+Arjun&dates=20261213%2F20261214&ctz=Asia%2FKolkata&location=Courtyard+Hall%2C+Palace+Road%2C+Jaipur&details=Added+with+Card+Kholo",
+        "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Courtyard+Hall%2C+Palace+Road%2C+Jaipur"
+      }
+    ]
+  }
+}

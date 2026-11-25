@@ -1,0 +1,44 @@
+# Render Blueprint for the Card Kholo backend (the FastAPI app lives at the repo root).
+# New > Blueprint > pick this repo, then fill each value in the dashboard (sync: false = never stored here).
+services:
+  - type: web
+    name: card-kholo-api
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
+      - key: DEMO_CACHE
+        value: "on"
+      - key: SARVAM_API_KEY
+        sync: false
+      - key: FLAGSMITH_ENV_KEY
+        sync: false
+      - key: FLAGSMITH_ADMIN_API_KEY
+        sync: false
+      - key: FLAGSMITH_ADMIN_ENV_KEY
+        sync: false
+      - key: FLAGSMITH_PROJECT_ID
+        sync: false
+      - key: FLAGSMITH_FEATURE_IDS
+        sync: false
+      - key: FLAGSMITH_SEGMENT_IDS
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_BOT_USERNAME
+        sync: false
+      - key: TELEGRAM_SECRET
+        sync: false
+      - key: NUDGEBEE_WEBHOOK_URL
+        sync: false
+      - key: HOOK_SECRET
+        sync: false
+      - key: APP_BASE_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false

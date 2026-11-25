@@ -1,0 +1,11 @@
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.4
+httpx==0.28.1
+python-multipart==0.0.34
+qrcode[pil]==8.2
+pillow==13.0.0
+sarvamai==0.1.49
+flagsmith==6.7.0
+pypdfium2==5.15.2
+python-dotenv==1.2.4
