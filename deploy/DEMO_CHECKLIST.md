@@ -1,6 +1,6 @@
 # Demo checklist
 
-`API` = `https://<service>.onrender.com`, `WEB` = `https://<project>.vercel.app`.
+`API` = `https://card-kholo-api.onrender.com`, `WEB` = `https://card-kholo.vercel.app`.
 
 ## Before going on stage (15 min before)
 1. Wake the backend: open `API/health` → `{"ok":true}`. Then `check_integrations.py --base-url API` (all PASS).

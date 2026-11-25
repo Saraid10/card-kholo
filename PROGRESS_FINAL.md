@@ -64,3 +64,10 @@ Next: user fills `.env` / `CardKholo/.env.local`, deploys, then runs the live ch
   `.gitignore` extended (.env*, *.db, demo/*.apk), secret scan clean (only dummy "test" keys in tests),
   `deploy/DEPLOY_STEPS.md`, `deploy/DEMO_CHECKLIST.md`. gh logged in as Saraid10, no remote yet.
 - Waiting on user: Telegram bot, warning_style fix, NudgeBee workflow check, commit/push, deploy choices.
+- Deploy: warning_style fixed (12/20 urgent). Repo github.com/Saraid10/card-kholo (private, main).
+  Vercel prod https://card-kholo.vercel.app (project card-kholo, VITE_ env set, points at card-kholo-api.onrender.com).
+  Render https://card-kholo-api.onrender.com live (Blueprint, env from gitignored deploy/render.env).
+- Production: check_integrations 12/12 PASS (Telegram webhook set by app, CORS for Vercel origin);
+  e2e API run PASS (real card 4 functions in 5 s, ICS, APK + audio, bit.ly, events, status, pairing).
+  Flagsmith env webhook created (id 5481) -> /hooks/flagsmith.
+- Left: simulate_incident + NudgeBee approval (needs user OK), two-phone Telegram test, cron-job.org keep-warm.
